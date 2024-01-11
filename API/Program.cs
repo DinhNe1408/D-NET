@@ -1,4 +1,4 @@
-// using SDCores;
+using SDCores;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-// builder.Services.AddDependencyInjectionConfiguration(typeof(Program));
-// builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+builder.Services.AddDependencyInjectionConfiguration(typeof(Program));
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
