@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [Route("[controller]")][Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class C_DemoController : ControllerBase
     {
@@ -12,6 +12,12 @@ namespace API.Controllers
         public C_DemoController(I_Demo service)
         {
             _service = service;
+        }
+
+        [HttpGet("Demo")]
+        public async Task<IActionResult> Demo(){
+            var result = await _service.Demo();
+            return Ok(result);
         }
     }
 }

@@ -1,7 +1,6 @@
 namespace API.Models
 {
-    public class Demo
+    public record class Demo
     {
-        
     }
 }
